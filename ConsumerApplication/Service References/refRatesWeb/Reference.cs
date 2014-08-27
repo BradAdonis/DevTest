@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsumerApplication.RateSystemRef {
+namespace ConsumerApplication.refRatesWeb {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,10 +23,10 @@ namespace ConsumerApplication.RateSystemRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ConsumerApplication.RateSystemRef.Employee[] EmployeesField;
+        private ConsumerApplication.refRatesWeb.Employee[] EmployeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ConsumerApplication.RateSystemRef.Rate RateField;
+        private ConsumerApplication.refRatesWeb.Rate RateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RateIDField;
@@ -48,7 +48,7 @@ namespace ConsumerApplication.RateSystemRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConsumerApplication.RateSystemRef.Employee[] Employees {
+        public ConsumerApplication.refRatesWeb.Employee[] Employees {
             get {
                 return this.EmployeesField;
             }
@@ -61,7 +61,7 @@ namespace ConsumerApplication.RateSystemRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConsumerApplication.RateSystemRef.Rate Rate {
+        public ConsumerApplication.refRatesWeb.Rate Rate {
             get {
                 return this.RateField;
             }
@@ -132,10 +132,13 @@ namespace ConsumerApplication.RateSystemRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RateDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RateIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ConsumerApplication.RateSystemRef.Role[] RolesField;
+        private ConsumerApplication.refRatesWeb.Role[] RolesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal ValueField;
@@ -147,6 +150,19 @@ namespace ConsumerApplication.RateSystemRef {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RateDescription {
+            get {
+                return this.RateDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RateDescriptionField, value) != true)) {
+                    this.RateDescriptionField = value;
+                    this.RaisePropertyChanged("RateDescription");
+                }
             }
         }
         
@@ -164,7 +180,7 @@ namespace ConsumerApplication.RateSystemRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConsumerApplication.RateSystemRef.Role[] Roles {
+        public ConsumerApplication.refRatesWeb.Role[] Roles {
             get {
                 return this.RolesField;
             }
@@ -221,7 +237,7 @@ namespace ConsumerApplication.RateSystemRef {
         private string EmployeeSurnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ConsumerApplication.RateSystemRef.Role RoleField;
+        private ConsumerApplication.refRatesWeb.Role RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RoleIDField;
@@ -289,7 +305,7 @@ namespace ConsumerApplication.RateSystemRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConsumerApplication.RateSystemRef.Role Role {
+        public ConsumerApplication.refRatesWeb.Role Role {
             get {
                 return this.RoleField;
             }
@@ -325,23 +341,53 @@ namespace ConsumerApplication.RateSystemRef {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://mycompany.com/rates", ConfigurationName="RateSystemRef.IRateSys")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://mycompany.com/rates", ConfigurationName="refRatesWeb.IRateSys")]
     public interface IRateSys {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Roles", ReplyAction="http://mycompany.com/rates/IRateSys/RolesResponse")]
-        ConsumerApplication.RateSystemRef.Role[] Roles();
+        ConsumerApplication.refRatesWeb.Role[] Roles();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Roles", ReplyAction="http://mycompany.com/rates/IRateSys/RolesResponse")]
-        System.Threading.Tasks.Task<ConsumerApplication.RateSystemRef.Role[]> RolesAsync();
+        System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Role[]> RolesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Rates", ReplyAction="http://mycompany.com/rates/IRateSys/RatesResponse")]
+        ConsumerApplication.refRatesWeb.Rate[] Rates();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Rates", ReplyAction="http://mycompany.com/rates/IRateSys/RatesResponse")]
+        System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Rate[]> RatesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Employees", ReplyAction="http://mycompany.com/rates/IRateSys/EmployeesResponse")]
+        ConsumerApplication.refRatesWeb.Employee[] Employees();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/Employees", ReplyAction="http://mycompany.com/rates/IRateSys/EmployeesResponse")]
+        System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Employee[]> EmployeesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddEmployee", ReplyAction="http://mycompany.com/rates/IRateSys/AddEmployeeResponse")]
+        bool AddEmployee(ConsumerApplication.refRatesWeb.Employee emp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddEmployee", ReplyAction="http://mycompany.com/rates/IRateSys/AddEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> AddEmployeeAsync(ConsumerApplication.refRatesWeb.Employee emp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddRate", ReplyAction="http://mycompany.com/rates/IRateSys/AddRateResponse")]
+        bool AddRate(ConsumerApplication.refRatesWeb.Rate rate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddRate", ReplyAction="http://mycompany.com/rates/IRateSys/AddRateResponse")]
+        System.Threading.Tasks.Task<bool> AddRateAsync(ConsumerApplication.refRatesWeb.Rate rate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddRole", ReplyAction="http://mycompany.com/rates/IRateSys/AddRoleResponse")]
+        bool AddRole(ConsumerApplication.refRatesWeb.Role role);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddRole", ReplyAction="http://mycompany.com/rates/IRateSys/AddRoleResponse")]
+        System.Threading.Tasks.Task<bool> AddRoleAsync(ConsumerApplication.refRatesWeb.Role role);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRateSysChannel : ConsumerApplication.RateSystemRef.IRateSys, System.ServiceModel.IClientChannel {
+    public interface IRateSysChannel : ConsumerApplication.refRatesWeb.IRateSys, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RateSysClient : System.ServiceModel.ClientBase<ConsumerApplication.RateSystemRef.IRateSys>, ConsumerApplication.RateSystemRef.IRateSys {
+    public partial class RateSysClient : System.ServiceModel.ClientBase<ConsumerApplication.refRatesWeb.IRateSys>, ConsumerApplication.refRatesWeb.IRateSys {
         
         public RateSysClient() {
         }
@@ -362,12 +408,52 @@ namespace ConsumerApplication.RateSystemRef {
                 base(binding, remoteAddress) {
         }
         
-        public ConsumerApplication.RateSystemRef.Role[] Roles() {
+        public ConsumerApplication.refRatesWeb.Role[] Roles() {
             return base.Channel.Roles();
         }
         
-        public System.Threading.Tasks.Task<ConsumerApplication.RateSystemRef.Role[]> RolesAsync() {
+        public System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Role[]> RolesAsync() {
             return base.Channel.RolesAsync();
+        }
+        
+        public ConsumerApplication.refRatesWeb.Rate[] Rates() {
+            return base.Channel.Rates();
+        }
+        
+        public System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Rate[]> RatesAsync() {
+            return base.Channel.RatesAsync();
+        }
+        
+        public ConsumerApplication.refRatesWeb.Employee[] Employees() {
+            return base.Channel.Employees();
+        }
+        
+        public System.Threading.Tasks.Task<ConsumerApplication.refRatesWeb.Employee[]> EmployeesAsync() {
+            return base.Channel.EmployeesAsync();
+        }
+        
+        public bool AddEmployee(ConsumerApplication.refRatesWeb.Employee emp) {
+            return base.Channel.AddEmployee(emp);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddEmployeeAsync(ConsumerApplication.refRatesWeb.Employee emp) {
+            return base.Channel.AddEmployeeAsync(emp);
+        }
+        
+        public bool AddRate(ConsumerApplication.refRatesWeb.Rate rate) {
+            return base.Channel.AddRate(rate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddRateAsync(ConsumerApplication.refRatesWeb.Rate rate) {
+            return base.Channel.AddRateAsync(rate);
+        }
+        
+        public bool AddRole(ConsumerApplication.refRatesWeb.Role role) {
+            return base.Channel.AddRole(role);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddRoleAsync(ConsumerApplication.refRatesWeb.Role role) {
+            return base.Channel.AddRoleAsync(role);
         }
     }
 }

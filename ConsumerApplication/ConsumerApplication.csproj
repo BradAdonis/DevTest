@@ -55,11 +55,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\RateSystemRef\Reference.cs">
+    <Compile Include="BindingItem.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Rates.xaml.cs">
+      <DependentUpon>Rates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.xaml.cs">
+      <DependentUpon>Roles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\refRatesWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Page Include="Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Roles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,18 +132,24 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\RateSystemRef\ConsumerApplication.RateSystemRef.Role.datasource">
+    <None Include="Service References\refRatesWeb\ConsumerApplication.refRatesWeb.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RateSystemRef\ratesystem.wsdl" />
-    <None Include="Service References\RateSystemRef\ratesystem.xsd">
+    <None Include="Service References\refRatesWeb\ConsumerApplication.refRatesWeb.Rate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\refRatesWeb\ConsumerApplication.refRatesWeb.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\refRatesWeb\ratesystem.wsdl" />
+    <None Include="Service References\refRatesWeb\ratesystem.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RateSystemRef\RateSystem1.wsdl" />
-    <None Include="Service References\RateSystemRef\ratesystem1.xsd">
+    <None Include="Service References\refRatesWeb\RateSystem1.wsdl" />
+    <None Include="Service References\refRatesWeb\ratesystem1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RateSystemRef\ratesystem2.xsd">
+    <None Include="Service References\refRatesWeb\ratesystem2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -118,19 +160,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\RateSystemRef\" />
+    <WCFMetadataStorage Include="Service References\refRatesWeb\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RateSystemRef\ratesystem.disco" />
+    <None Include="Service References\refRatesWeb\ratesystem.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RateSystemRef\configuration91.svcinfo" />
+    <None Include="Service References\refRatesWeb\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RateSystemRef\configuration.svcinfo" />
+    <None Include="Service References\refRatesWeb\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RateSystemRef\Reference.svcmap">
+    <None Include="Service References\refRatesWeb\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

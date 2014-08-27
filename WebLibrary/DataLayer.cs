@@ -38,7 +38,7 @@ namespace WebLibrary.Data
         {
             IList<Role> defaultRoles = new List<Role>();
 
-            Rate rate = new Rate() { Value = 0.00M };
+            Rate rate = new Rate() { Value = 0.00M, RateDescription = "Default Rate" };
 
             context.Rates.Add(rate);
 

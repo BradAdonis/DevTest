@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b409a527-bb50-423c-9507-88e18908e6fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/ratesystem" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ratesystem.xsd" MetadataType="Schema" ID="4c294357-935b-45a2-8bac-e02624ceb823" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?xsd=xsd2" />
+    <MetadataFile FileName="ratesystem.wsdl" MetadataType="Wsdl" ID="0a219c52-fd64-4714-ab65-f522d50f2bf0" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?wsdl=wsdl0" />
+    <MetadataFile FileName="ratesystem1.xsd" MetadataType="Schema" ID="11d3c126-2afa-445d-9d17-aae95762de2f" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?xsd=xsd0" />
+    <MetadataFile FileName="ratesystem2.xsd" MetadataType="Schema" ID="a10f519f-1620-4e0e-972e-3e370804fcee" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?xsd=xsd1" />
+    <MetadataFile FileName="ratesystem.disco" MetadataType="Disco" ID="bc4cf063-1814-4b8d-84f6-c0e78ed3a6c8" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?disco" />
+    <MetadataFile FileName="RateSystem1.wsdl" MetadataType="Wsdl" ID="d5da35a7-a586-4f60-91bb-711b00fcb65c" SourceId="1" SourceUrl="http://localhost:8080/ratesystem?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

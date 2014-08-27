@@ -37,6 +37,8 @@ namespace WebLibrary.Entities
         [DataMember]
         public int RateID { get; set; }
         [DataMember]
+        public string RateDescription { get; set; }
+        [DataMember]
         public decimal Value { get; set; }
         [DataMember]
         public virtual ICollection<Role> Roles { get; set; }

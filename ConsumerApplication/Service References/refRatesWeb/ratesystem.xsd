@@ -35,10 +35,17 @@
   <xs:element name="Employee" nillable="true" type="tns:Employee" />
   <xs:complexType name="Rate">
     <xs:sequence>
+      <xs:element minOccurs="0" name="RateDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RateID" type="xs:int" />
       <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole" />
       <xs:element minOccurs="0" name="Value" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Rate" nillable="true" type="tns:Rate" />
+  <xs:complexType name="ArrayOfRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rate" nillable="true" type="tns:Rate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRate" nillable="true" type="tns:ArrayOfRate" />
 </xs:schema>

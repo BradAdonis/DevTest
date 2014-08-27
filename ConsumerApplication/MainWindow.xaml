@@ -1,8 +1,19 @@
 ﻿<Window x:Class="ConsumerApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Rates Administrator" Height="600" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Name="gridMain">
+        <TabControl Name="tabFunctions">
+            <TabItem Name="tabEmployees" Header="Employees"/>
+            <TabItem Name="tabRoles" Header="Roles"/>
+            <TabItem Name="tabRates" Header="Rates"/>
+        </TabControl>
     </Grid>
 </Window>
