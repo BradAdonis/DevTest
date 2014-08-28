@@ -16,10 +16,14 @@ using System.Windows.Shapes;
 namespace ConsumerApplication
 {
     /// <summary>
-    /// Interaction logic for Search.xaml
+    /// This is the search control which is made up of a data grid, a text box to enter a search string and a search button
     /// </summary>
     public partial class Search : UserControl
     {
+        /// <summary>
+        /// Private varibales containgin the type of search operations to perfrom and all the event handlers for each of the operations
+        /// The lists will contain all the latest data.
+        /// </summary>
         private Enums.Operation _Operation;
 
         public delegate void EmployeeSelection(Data.Employee Employee);
@@ -61,6 +65,9 @@ namespace ConsumerApplication
             }
         }
 
+        /// <summary>
+        /// Get all the latest employee data and either sets a search process or binds all the data and then hides all the necessary columns
+        /// </summary>
         private void SyncEmployee()
         {
             _EmployeeList = Controller.getEmployees();
@@ -72,16 +79,20 @@ namespace ConsumerApplication
             else
             {
                 dgSearchData.ItemsSource = _EmployeeList;
+            }
 
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.Columns[4].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
+            if (dgSearchData.Columns.Count > 0)
+            {
+                dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
+                dgSearchData.Columns[4].Visibility = System.Windows.Visibility.Hidden;
+                dgSearchData.SelectedIndex = 0;
             }
         }
 
+        /// <summary>
+        /// Get the latest rates data and either starts a search process or binds all of the data to the datagrid.
+        /// The necessary columns are hidden
+        /// </summary>
         private void SyncRates()
         {
             _RateList = Controller.getRates();
@@ -93,15 +104,19 @@ namespace ConsumerApplication
             else
             {
                 dgSearchData.ItemsSource = _RateList;
+            }
 
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
+            if (dgSearchData.Columns.Count > 0)
+            {
+                dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
+                dgSearchData.SelectedIndex = 0;
             }
         }
 
+        /// <summary>
+        /// Method that get all of the data for the system roles and once again performs a search function or binds all the data
+        /// The necessary columns are hidden
+        /// </summary>
         private void SyncRoles()
         {
             _RoleList = Controller.getRoles();
@@ -113,16 +128,19 @@ namespace ConsumerApplication
             else
             {
                 dgSearchData.ItemsSource = _RoleList;
+            }
 
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.Columns[2].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
+            if (dgSearchData.Columns.Count > 0)
+            {
+                dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
+                dgSearchData.Columns[2].Visibility = System.Windows.Visibility.Hidden;
+                dgSearchData.SelectedIndex = 0;
             }
         }
 
+        /// <summary>
+        /// When a data grid selection is made the necessary record is cast and the necessary event handler is fired.
+        /// </summary>
         private void ProcessSelection()
         {
             if (dgSearchData.SelectedItem != null)
@@ -156,6 +174,10 @@ namespace ConsumerApplication
             }
         }
 
+        /// <summary>
+        /// Searches through the employee data list and creates a secondary list. If the criteria meets the constraints, the secondary list is bound to the control
+        /// </summary>
+        /// <param name="Criteria"></param>
         private void SearchEmployee(string Criteria)
         {
             ICollection<Data.Employee> employees = new List<Data.Employee>();
@@ -171,12 +193,6 @@ namespace ConsumerApplication
             if (employees.Count > 0)
             {
                 dgSearchData.ItemsSource = employees;
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.Columns[4].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
             }
             else
             {
@@ -184,6 +200,7 @@ namespace ConsumerApplication
             }
         }
 
+        //searches through the roles list and creates a secondary list and will bind the secondary list if it contains values
         private void SearchRoles(string Criteria)
         {
             ICollection<Data.Role> roles = new List<Data.Role>();
@@ -199,12 +216,6 @@ namespace ConsumerApplication
             if (roles.Count > 0)
             {
                 dgSearchData.ItemsSource = roles;
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.Columns[2].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
             }
             else
             {
@@ -212,6 +223,10 @@ namespace ConsumerApplication
             }
         }
 
+        /// <summary>
+        /// search through the rates list and adds to a secondary list and if the secondary list contains data the source is binded.
+        /// </summary>
+        /// <param name="Criteria"></param>
         private void SearchRates(string Criteria)
         {
             ICollection<Data.Rate> rates = new List<Data.Rate>();
@@ -227,11 +242,6 @@ namespace ConsumerApplication
             if (rates.Count > 0)
             {
                 dgSearchData.ItemsSource = rates;
-                if (dgSearchData.Columns.Count > 0)
-                {
-                    dgSearchData.Columns[0].Visibility = System.Windows.Visibility.Hidden;
-                    dgSearchData.SelectedIndex = 0;
-                }
             }
             else
             {
@@ -252,6 +262,18 @@ namespace ConsumerApplication
             set
             {
                 _Operation = value;
+            }
+        }
+
+        public string SearchString
+        {
+            get
+            {
+                return txtSearch.Text;
+            }
+            set
+            {
+                txtSearch.Text = value;
             }
         }
 

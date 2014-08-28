@@ -22,8 +22,8 @@
         </Grid.RowDefinitions>
         <local:Search Grid.Row="0" x:Name="searchEmployee"/>
         <StackPanel Grid.Row="1" Style="{StaticResource Toolbar}">
-            <Button Name="btnSave" Content="Save" Style="{StaticResource ToolbarButton}"/>
-            <Button Name="btnNew" Content="New" Style="{StaticResource ToolbarButton}"/>
+            <Button Name="btnSave" Content="Save" Style="{StaticResource ToolbarButton}" Click="btnSave_Click"/>
+            <Button Name="btnNew" Content="New" Style="{StaticResource ToolbarButton}" Click="btnNew_Click"/>
         </StackPanel>
         <Border Style="{StaticResource ContentBorder}" Grid.Row="2">
             <Grid Name="Content">

@@ -127,5 +127,46 @@ namespace ConsumerApplication
                 return call.AddRole(role);
             }
         }
+
+        public static bool updateEmployee(int EmployeeID, string EmployeeName, string EmployeeSurname, string EmployeeNumber, int RoleID)
+        {
+            using (refRatesWeb.RateSysClient call = new refRatesWeb.RateSysClient())
+            {
+                refRatesWeb.Employee emp = new refRatesWeb.Employee();
+                emp.EmployeeID = EmployeeID;
+                emp.EmployeeName = EmployeeName;
+                emp.EmployeeSurname = EmployeeSurname;
+                emp.EmployeeNumber = EmployeeNumber;
+                emp.RoleID = RoleID;
+
+                return call.UpdateEmployee(emp);
+            }
+        }
+
+        public static bool updateRate(int RateID, string RateDescription, decimal RateValue)
+        {
+            using (refRatesWeb.RateSysClient call = new refRatesWeb.RateSysClient())
+            {
+                refRatesWeb.Rate rate = new refRatesWeb.Rate();
+                rate.RateID = RateID;
+                rate.RateDescription = RateDescription;
+                rate.Value = RateValue;
+
+                return call.UpdateRate(rate);
+            }
+        }
+
+        public static bool updateRole(int RoleID, string RoleName, int RateID)
+        {
+            using (refRatesWeb.RateSysClient call = new refRatesWeb.RateSysClient())
+            {
+                refRatesWeb.Role role = new refRatesWeb.Role();
+                role.RoleID = RoleID;
+                role.RoleName = RoleName;
+                role.RateID = RateID;
+
+                return call.UpdateRole(role);
+            }
+        }
     }
 }

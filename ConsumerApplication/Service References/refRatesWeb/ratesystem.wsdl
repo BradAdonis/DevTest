@@ -43,6 +43,24 @@
   <wsdl:message name="IRateSys_AddRole_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddRoleResponse" />
   </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRate" />
+  </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRole" />
+  </wsdl:message>
+  <wsdl:message name="IRateSys_UpdateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoleResponse" />
+  </wsdl:message>
   <wsdl:portType name="IRateSys">
     <wsdl:operation name="Roles">
       <wsdl:input wsaw:Action="http://mycompany.com/rates/IRateSys/Roles" message="tns:IRateSys_Roles_InputMessage" />
@@ -67,6 +85,18 @@
     <wsdl:operation name="AddRole">
       <wsdl:input wsaw:Action="http://mycompany.com/rates/IRateSys/AddRole" message="tns:IRateSys_AddRole_InputMessage" />
       <wsdl:output wsaw:Action="http://mycompany.com/rates/IRateSys/AddRoleResponse" message="tns:IRateSys_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateEmployee" message="tns:IRateSys_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateEmployeeResponse" message="tns:IRateSys_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRate">
+      <wsdl:input wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateRate" message="tns:IRateSys_UpdateRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateRateResponse" message="tns:IRateSys_UpdateRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:input wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateRole" message="tns:IRateSys_UpdateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://mycompany.com/rates/IRateSys/UpdateRoleResponse" message="tns:IRateSys_UpdateRole_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

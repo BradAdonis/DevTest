@@ -38,7 +38,7 @@ namespace WebLibrary.Data
         {
             IList<Role> defaultRoles = new List<Role>();
 
-            Rate rate = new Rate() { Value = 0.00M, RateDescription = "Default Rate" };
+            Rate rate = new Rate() { Value = 100.00M, RateDescription = "Default Rate" };
 
             context.Rates.Add(rate);
 
@@ -51,7 +51,7 @@ namespace WebLibrary.Data
             defaultRoles.Add(new Role() { RoleName = "SharePoint Developer", Rate=rate});
             defaultRoles.Add(new Role() { RoleName = "BI Developer", Rate=rate});
 
-            Employee emp = new Employee() { EmployeeName = "Default", EmployeeNumber = "0", EmployeeSurname = "Employee", Role=defaultRoles[0] };
+            Employee emp = new Employee() { EmployeeName = "Default", EmployeeNumber = "00000", EmployeeSurname = "Employee", Role=defaultRoles[0] };
             context.Employees.Add(emp);
 
             foreach (Role r in defaultRoles)

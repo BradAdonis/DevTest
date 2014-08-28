@@ -29,5 +29,14 @@ namespace WebLibrary
 
         [OperationContract]
         bool AddRole(Role role);
+
+        [OperationContract]
+        bool UpdateEmployee(Employee emp);
+
+        [OperationContract]
+        bool UpdateRate(Rate rate);
+
+        [OperationContract]
+        bool UpdateRole(Role role);
     }
 }

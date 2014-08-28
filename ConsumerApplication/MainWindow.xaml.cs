@@ -42,6 +42,7 @@ namespace ConsumerApplication
             tabRates.Content = controlRates;
         }
 
+        //Used to sync the data throughout the tabs. When new data is added, it has to be available in the next tab
         private  void tabFunctions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (CurrentTab != tabFunctions.SelectedIndex)

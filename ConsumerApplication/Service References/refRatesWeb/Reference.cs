@@ -379,6 +379,24 @@ namespace ConsumerApplication.refRatesWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/AddRole", ReplyAction="http://mycompany.com/rates/IRateSys/AddRoleResponse")]
         System.Threading.Tasks.Task<bool> AddRoleAsync(ConsumerApplication.refRatesWeb.Role role);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateEmployee", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateEmployeeResponse")]
+        bool UpdateEmployee(ConsumerApplication.refRatesWeb.Employee emp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateEmployee", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateEmployeeResponse")]
+        System.Threading.Tasks.Task<bool> UpdateEmployeeAsync(ConsumerApplication.refRatesWeb.Employee emp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateRate", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateRateResponse")]
+        bool UpdateRate(ConsumerApplication.refRatesWeb.Rate rate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateRate", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateRateResponse")]
+        System.Threading.Tasks.Task<bool> UpdateRateAsync(ConsumerApplication.refRatesWeb.Rate rate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateRole", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateRoleResponse")]
+        bool UpdateRole(ConsumerApplication.refRatesWeb.Role role);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://mycompany.com/rates/IRateSys/UpdateRole", ReplyAction="http://mycompany.com/rates/IRateSys/UpdateRoleResponse")]
+        System.Threading.Tasks.Task<bool> UpdateRoleAsync(ConsumerApplication.refRatesWeb.Role role);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -454,6 +472,30 @@ namespace ConsumerApplication.refRatesWeb {
         
         public System.Threading.Tasks.Task<bool> AddRoleAsync(ConsumerApplication.refRatesWeb.Role role) {
             return base.Channel.AddRoleAsync(role);
+        }
+        
+        public bool UpdateEmployee(ConsumerApplication.refRatesWeb.Employee emp) {
+            return base.Channel.UpdateEmployee(emp);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateEmployeeAsync(ConsumerApplication.refRatesWeb.Employee emp) {
+            return base.Channel.UpdateEmployeeAsync(emp);
+        }
+        
+        public bool UpdateRate(ConsumerApplication.refRatesWeb.Rate rate) {
+            return base.Channel.UpdateRate(rate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateRateAsync(ConsumerApplication.refRatesWeb.Rate rate) {
+            return base.Channel.UpdateRateAsync(rate);
+        }
+        
+        public bool UpdateRole(ConsumerApplication.refRatesWeb.Role role) {
+            return base.Channel.UpdateRole(role);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateRoleAsync(ConsumerApplication.refRatesWeb.Role role) {
+            return base.Channel.UpdateRoleAsync(role);
         }
     }
 }

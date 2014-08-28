@@ -128,5 +128,73 @@ namespace WebLibrary
                 }
             }
         }
+
+        public bool UpdateEmployee(Employee emp)
+        {
+            Console.WriteLine("\r\n{0} - Updating Employee", DateTime.Now);
+            using (RatesDBContext context = new RatesDBContext())
+            {
+                Employee employee = context.Employees.Where(e => e.EmployeeID == emp.EmployeeID).FirstOrDefault<Employee>();
+                if (employee != null)
+                {
+                    employee.EmployeeName = emp.EmployeeName;
+                    employee.EmployeeNumber = emp.EmployeeNumber;
+                    employee.EmployeeSurname = emp.EmployeeSurname;
+                    employee.RoleID = emp.RoleID;
+                    context.SaveChanges();
+                    Console.WriteLine("Employee Name : {0}",emp.EmployeeName);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateRate(Rate rate)
+        {
+            Console.WriteLine("\r\n{0} - Updating Rate", DateTime.Now);
+            using (RatesDBContext context = new RatesDBContext())
+            {
+                Rate rateRecord = context.Rates.Where(r => r.RateID == rate.RateID).FirstOrDefault<Rate>();
+
+                if (rateRecord != null)
+                {
+                    rateRecord.RateDescription = rate.RateDescription;
+                    rateRecord.Value = rate.Value;
+                    context.SaveChanges();
+                    Console.WriteLine("{0} Rate Value : {1}", rate.RateDescription, rate.Value.ToString());
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateRole(Role role)
+        {
+            Console.WriteLine("\r\n{0} - Updating Role", DateTime.Now);
+            using (RatesDBContext context = new RatesDBContext())
+            {
+                Role roleRecord = context.Roles.Where(r => r.RoleID == role.RoleID).FirstOrDefault<Role>();
+                if (roleRecord != null)
+                {
+                    roleRecord.RoleName = role.RoleName;
+                    roleRecord.RateID = role.RateID;
+                    context.SaveChanges();
+                    Console.WriteLine("Role : {0}", role.RoleName);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
